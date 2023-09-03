@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&family=Press+Start+2P&display=swap');
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+.menuImg {
+  background-image: url(../public/menu.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: palegreen;
+
+}
+
+.menu p {
+  margin-bottom: 90px;
+}
+
+.card {
+  background-image: url(../public/pokemonPattern.jpg);
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  min-width: 230px;
+  max-width: 250px;
+  padding: 5px 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 1);
+  transition: all 0.2s !important;
+
+
+}
+
+.card:hover {
+  transform: scale(1.05) !important;
+}
+
+.card p {
+  background-color: #251814;
+  color: #E8E6DD;
+  padding: 10px;
+  border-radius: 1rem;
+  width: 92%;
+  margin-bottom: 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 1);
+
+}
+
+.card img {
+  background-color: #E8E6DD;
+  border-radius: 1rem;
+  margin: 5px 6px;
+  width: 95%;
+  height: auto;
+  box-shadow: 0px 4px 20px 6px rgba(0, 0, 0, 1);
+
+}
+
+.game {
+  background-image: url(../public/gameBg.jpg);
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+
+.levelPassed {
+  background-image: url(../public/nextLevel.jpg);
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+  color: black;
+}
+
+.gameOver {
+  background-image: url(../public/gameOver.jpg);
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+  color: white;
+}
+
+.gameOver .card {
+  max-height: 300px;
+}
