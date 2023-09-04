@@ -3,6 +3,8 @@ import Card from "./Card";
 import { useState, useEffect } from "react";
 export default function Cards ({endGame, record, newGame, cardsClicked}) {
     const [pokemons, setPokemons] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isAnimating, setIsAnimating] = useState(false);
 
     // Get cards
     useEffect(() => {
@@ -34,12 +36,31 @@ export default function Cards ({endGame, record, newGame, cardsClicked}) {
 
     
     const pokemonCards = pokemons.map(pokemon => {
-        return <Card record={record} key={pokemon.id} pokemons={{value:pokemons, set:setPokemons}} pokemon={pokemon} cardsClicked={cardsClicked} endGame={endGame} />
+        return <Card 
+            record={record} 
+            key={pokemon.id} 
+            pokemons={{value:pokemons, set:setPokemons}} 
+            pokemon={pokemon} 
+            cardsClicked={cardsClicked} 
+            endGame={endGame}
+            isAnimating={{value:isAnimating, set:setIsAnimating}}
+            />
     });
 
-    return (
-        <div className="container">
+
+    function render(){  
+        if(pokemons.length === 0){
+            return (<h2>Loading...</h2>);
+        }
+        
+        return (
+            <div className="container">
                 <div className="row gap-4 justify-content-center">{pokemonCards}</div>
-        </div>
-    );
+            </div>
+        );
+        
+    
+    }
+
+    return render();
 }

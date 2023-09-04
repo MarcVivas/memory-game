@@ -41,9 +41,38 @@
   padding: 5px 5px;
   cursor: pointer;
   box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 1);
-  transition: all 0.2s !important;
+  transition: all 0.4s !important;
+  animation: showCard 0.5s ease-in-out; /* Use the animation with a 1-second duration */
+
+}
+
+@keyframes showCard {
+  from {
+    transform: translateY(-10px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+  
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotateY(180deg); /* Rotate the card 180 degrees */
+  }
+  to {
+    transform: rotateY(0deg); /* Rotate the card back to its normal position */
+  }
+}
 
 
+.card img {
+  transition: 0.5s;
+}
+
+.card p {
+  transition: 0.5s;
 }
 
 .card:hover {
@@ -78,6 +107,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
+  overflow: auto;
 }
 
 .levelPassed {
@@ -103,3 +133,20 @@
 .gameOver .card {
   max-height: 300px;
 }
+
+.card-animation {
+  transition: 0.4s;
+  animation: rotateIn 1s ease-in-out; /* Use the animation with a 1-second duration */
+
+}
+
+.card-animation img {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card-animation p {
+  opacity: 0;
+  transition: 0.3s;
+}
+

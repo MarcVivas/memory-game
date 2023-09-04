@@ -36,7 +36,7 @@ export default function EndGame({ endGame, newGame, setCardsClicked }) {
           <h1>End game</h1>
           <p>You have clicked this pokemon twice!</p>
 
-          <Card pokemon={endGame.value.cause} endGame={endGame} />
+          <Card pokemon={endGame.value.cause} endGame={endGame} isAnimating={{value:false, set:undefined}}/>
   
           <div className="d-flex gap-4">
             <button onClick={() => startANewGame(newGame.value.cardNumber)}>Try again</button>
